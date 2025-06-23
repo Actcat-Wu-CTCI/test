@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>PDF 報表</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+    embed {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    // 從 URL 擷取參數
+    const params = new URLSearchParams(window.location.search);
+    const id = "!";
+    var embed;
+    if (id) {
+       embed = document.createElement("embed");
+      embed.src = `D:/work/book/uhx.pdf`;
+      embed.type = "application/pdf";
+      document.body.appendChild(embed);
+    } else {
+      document.body.textContent = "請提供報表 ID。";
+    }
+  </script>
+</body>
+</html>
